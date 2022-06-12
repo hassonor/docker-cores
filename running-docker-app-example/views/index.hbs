@@ -1,0 +1,17 @@
+{{#each dockerCommands}}
+   <div class="flex items-center">
+      <div class="w-14"><img src="/images/gear-set-blue.png" class="h-9"></div>
+      <div class=""><h2>{{ command }} Command</h2></div>
+   </div>
+   <br />
+   {{ description }}
+   <br /><br />
+   
+   {{#each examples}}
+        <h3>{{ example }}</h3>
+        {{ description }}
+        <br />
+   {{/each}}
+   
+   <br><br>
+{{/each}}
