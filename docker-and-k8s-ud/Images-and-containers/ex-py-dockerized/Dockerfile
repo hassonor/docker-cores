@@ -1,7 +1,7 @@
-FROM python
+FROM python:3.10
 
 WORKDIR /app
 
-COPY . /app
+COPY . .
 
 CMD ["python","random-number-generator.py"]
