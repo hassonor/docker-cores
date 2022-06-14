@@ -56,6 +56,66 @@ The app uses Mongoose to create a simple database that stores Docker commands an
 
 7. Navigate to http://localhost:3000 in your browser.
 
+### Other useful Commands
 
+1. Building a Custom Image: <br>`docker build -t <name> .`
 
+```txt
+   -t --> short for --tag
+   <name> --> Image name
+   . --> Build context 
+```
+
+2. Using Registry Name, Image Name, and Tag
+   `docker build -t <registry>/<name>:<tag> .`
+
+```txt
+   -t --> short for --tag
+   <registry> --> Docker registry name
+   <name> --> Image name
+   . --> Build context 
+```
+
+3. Docker Image Commands: <br>
+   `docker images` -> List Docker images <br>
+   `docker rmi <imageId>` -> Remove an Image
+4. Deploy an Image to Docker Hub:<br>
+   `docker push <user name>/<image name>:<tag>`
+
+5. Pulling an Image from Registry<br>
+   `docker pull <imageName>`
+6. Running Container<br>
+   `docker run -p <extenalPort>:<internalPort> <imageName>`
+
+### Using docker run
+
+1.`docker pull nginx:alpine`
+
+2. `docker run -p 8080:80 -d nginx:alpine`
+3. `docker ps -a`
+
+### User docker logs to View Container Logs
+
+`docker logs <containerId>`
+
+### Creating a Container Volume
+
+1. `docker run -p <ports> -v /var/www/logs <imageToRun>` <br>
+
+```txt
+-v /var/www/logs --> Data in folder should be stored on the container host
+```
+
+2. Defining a Host Location (Mac/Linux): <br>
+   `docker run -p <ports> -v $(pwd):/var/www/logs <imageToRun>`
+3. Defining a Host Location (Windows): <br>
+   `docker run -p <ports> -v ${PWD}:/var/www/logs <imageToRun>`
+   <br>
+
+#### Creating a Container Volume (example):
+
+1. Create nginx folder
+2. Create index.html with some html content
+3. `docker run -p 8080:80 -v $(pwd):/usr/share/nginx/html nginx:alpine`
+4. run `localhost:8080` -> it will change to our created index.html :).
 
