@@ -119,3 +119,80 @@ The app uses Mongoose to create a simple database that stores Docker commands an
 3. `docker run -p 8080:80 -v $(pwd):/usr/share/nginx/html nginx:alpine`
 4. run `localhost:8080` -> it will change to our created index.html :).
 
+### Create a Bridge Network
+
+___
+
+1. `docker network create --driver <DriverToUse> <NetworkName>` <br>
+
+```txt
+docker network create --driver --driver bridge isolated_network
+netwrok create --> Create a network
+--driver bridge --> Define driver to use 
+isolated_network --> Network name
+```
+
+#### Key docker network Commands
+
+1. `docker network create` --> create a network
+2. `docker network ls` --> list the networks
+3. `docker network rm [network]` --> remove a network
+
+#### Running a Database Container in a Network
+
+1. `docker run -d --net=<BridgeNetworkToUse> --name=<DatabaseContainerName> <NameOfTheImage>`<br>
+
+```txt
+Demo:
+ docker network create --driver bridge isolated_network
+ docker run -d --net=isolated_network --name=mongodb mongo
+ docker ps
+```
+
+#### Run an Application Container in a Network
+
+1. `docker run -d -p 3000:3000 --net=<BridgeNetworkToUse> --name <AppContainername> <imageName>` <br>
+
+```txt
+Demo:
+   docker run -d -p 3000:3000 --net=isolated_network --name nodeapp imageName
+   docker ps
+```
+
+#### Using docker exec to Shell into a Container
+
+// sh or bash on Linux or PowerShell on Windows
+
+1. `docker exec -it <containerId> sh`
+
+```txt
+Demo:
+   docker exec -it nodeapp sh
+   node dbSeeder.js
+   Ctrl + C
+   exit
+    
+```
+
+### Building and Running Multiple Containers with Docker Compose
+
+___
+
+<b>Docker Compose Features:::</b><br>
+
+1. Define services using a YAML configuration file
+2. Build one or more images
+3. Start and stop services
+4. View the status of running services
+5. Stream the log output of running services
+
+#### Key Docker Compose Commands
+
+1. `docker-compose build`
+2. `docker-compose up`
+3. `docker-compose down`
+
+#### Using Docker Compose Commands
+
+
+

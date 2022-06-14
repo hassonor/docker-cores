@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fae80cf6-79e2-4e23-8489-8bdf586bb73a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/running-docker-app-example/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/running-docker-app-example/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/running-docker-app-example/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/running-docker-app-example/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/running-docker-app-example/node.dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/running-docker-app-example/node.dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/running-docker-app-example/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/running-docker-app-example/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1655040736620</updated>
       <workItem from="1655040738021" duration="3354000" />
-      <workItem from="1655045773164" duration="5546000" />
+      <workItem from="1655045773164" duration="12356000" />
     </task>
     <servers />
   </component>
