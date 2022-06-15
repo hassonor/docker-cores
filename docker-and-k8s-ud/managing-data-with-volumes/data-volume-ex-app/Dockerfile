@@ -8,7 +8,11 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3003
+ARG DEFAULT_PORT=3003
+
+ENV PORT $DEFAULT_PORT
+
+EXPOSE $PORT
 
 CMD ["npm", "start"]
 
