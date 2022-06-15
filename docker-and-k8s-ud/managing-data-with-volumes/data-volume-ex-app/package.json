@@ -5,7 +5,13 @@
   "main": "server.js",
   "author": "Or Hasosn",
   "license": "MIT",
+  "script": {
+    "start": "nodemon server.js"
+  },
   "dependencies": {
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
   }
 }
