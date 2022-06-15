@@ -1,0 +1,11 @@
+node_modules/
+
+.DS_Store
+.certs/
+.idea/
+.settings/
+.build/
+.idea/
+logs/access.log
+
+*.iml
