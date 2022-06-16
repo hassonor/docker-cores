@@ -30,15 +30,22 @@ services:
       - mongodb
 
     # Option-2:
-#    build:
-#      context: ./backend
-#      dockerfile: Dockerfile
-#      args:
-#        some-arg: 1
+    #    build:
+    #      context: ./backend
+    #      dockerfile: Dockerfile
+    #      args:
+    #        some-arg: 1
 
-
-
-#  frontend:
+  frontend:
+    build: ./frontend
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./frontend/src:/app/src
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
 
 volumes:
   data:
