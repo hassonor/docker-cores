@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: 'mongo'
+    volumes:
+      - data:/data/db
+
+    # Option-1:
+    #    environment:
+    #      MONGO_INITDB_ROOT_USERNAME: orh
+    #      MONGO_INITDB_ROOT_PASSWORD: secret
+
+    # Option-2:
+    env_file:
+      - ./env/mongo.env
+
+  backend:
+    # Option-1:
+    build: ./backend
+    ports:
+      - '80:80'
+    volumes:
+      - logs:/app/logs
+      - ./backend:/app
+      - /app/node_modules
+    env_file:
+      - ./env/backend.env
+    depends_on:
+      - mongodb
+
+    # Option-2:
+#    build:
+#      context: ./backend
+#      dockerfile: Dockerfile
+#      args:
+#        some-arg: 1
+
+
+
+#  frontend:
+
+volumes:
+  data:
+  logs:
