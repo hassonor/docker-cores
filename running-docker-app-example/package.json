@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/styles.css"
+    "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/styles.css.txt"
   },
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.5",
