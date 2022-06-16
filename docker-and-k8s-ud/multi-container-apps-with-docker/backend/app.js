@@ -78,12 +78,14 @@ app.delete('/goals/:id', async (req, res) => {
     } catch (err) {
         console.error('ERROR FETCHING GOALS');
         console.error(err.message);
+
         res.status(500).json({message: 'Failed to delete goal.'});
     }
 });
 
+
 mongoose.connect(
-    'mongodb://localhost:27017/course-goals',
+    `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@mongodb:27017/course-goals?authSource=admin`,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
