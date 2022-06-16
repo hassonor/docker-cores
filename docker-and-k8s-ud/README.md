@@ -180,6 +180,13 @@ ___
 * `docker volume rm VOL_NAME`: **Remove a Volume** by its' name (or ID).
 * `docker volume prune`: **Remove all unused Volumes(i.e. not connected to a currently running or stopped container).
 
+### Volume Usage Scenarios
+
+* Store log files Outside of container
+* Store database files outside of container
+* Link source code to container
+* And Many more Scenarios...
+
 ## Networks / Requests
 
 ___
@@ -315,9 +322,45 @@ There are two key commands:<br><br>
 * `docker-compose down`: **Stop and remove** all containers / services
     * `-v`: **Remove all Volumes** used for the Containers - otherwise they stay around, even if the Containers are
       removed.
+* `docker-compose up -d --no-deps [services...]` -
+    * `--no-deps` flag - Do not recreate services that the service depends on
+    * `[service]` - Stop,destroy and recreate *only* a specific service.
+* `docker-compose logs optional:[services...] ` - View the logs for all Docker Compose services or mentioned services
+    * we can also add flag `--tail=[INT]` to limit the amount of logs that are shown.
+    * we can also add flag `--follow` to follow the logs.
 
 Of course, there are **more commands**.
 Official command reference here: [https://docs/docker.com/compose/reference/](https://docs.docer.com/compose/reference/)
+
+### Shell into a Container
+
+___
+
+#### Using docker exec to Shell into a Container
+
+* `docker exec -it <contianerId> sh`
+    * `-it` flag for Interactive TTY
+    * `sh` Shell to use
+
+#### Shell Scenarios
+
+* View log files stored in the container
+* Run a DB seeder script
+* View code or files in a container
+
+#### Shell Into a Container with Docker Compose
+
+* `docker-compose exec <serviceName> <shell>`
+
+### Scale Containers
+
+___
+
+#### Defining an Environment Variable
+
+* `docker-compose up -d --scale api=4`
+    * `--scale` - Scale the number of containers created for a service
+    * `api=4` - Define service(s) to scale
 
 
 

@@ -45,6 +45,11 @@ There are two key commands:<br><br>
 * `docker-compose down`: **Stop and remove** all containers / services
     * `-v`: **Remove all Volumes** used for the Containers - otherwise they stay around, even if the Containers are
       removed.
+* `docker-compose up -d --no-deps [services...]` -
+    * `--no-deps` flag - Do not recreate services that the service depends on
+    * `[service]` - Stop,destroy and recreate *only* a specific service.
+* `docker-compose logs optional:[services...] ` - View the logs for all Docker Compose services or mentioned services
+    * we can also add `--tail=[INT]` to limit the amount of logs that are shown.
 
 Of course, there are **more commands**.
 Official command reference here: [https://docs/docker.com/compose/reference/](https://docs.docer.com/compose/reference/)
