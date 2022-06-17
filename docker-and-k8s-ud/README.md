@@ -1,6 +1,6 @@
 #### Copying Files Into & From Container
 
-1. Copy To The Container: `docker cp  test.text or . (to coppy all files)  <ContainerName>:/<PathOnContainerToCopy>`
+1. Copy To The Container: `docker cp  test.text or . (to copy all files)  <ContainerName>:/<PathOnContainerToCopy>`
 2. Copy From the Container: `docker cp <ContainerName>:/<PathOnContainer> <LocalPathToCopyFromContainer>`
 
 #### Naming and Tagging Containers & Images
