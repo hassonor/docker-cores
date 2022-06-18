@@ -20,3 +20,20 @@
 15. Press the `Task ID`
 16. Copy The Public IP to Browser and Paste it.
 17. We will see the App site :).
+
+#### Updated the Previous Container
+
+1. On my local machine:`docker built -t node-dep-example-1 .`
+2. `docker tag node-dep-example-1 orh87/node-example-1`
+3. `docker push orh87/node-dep-example-1`
+4. On `Amazon ECS` go to `Cluster` than press `default`
+5. Press on `Tasks`
+6. Press on the row on `Task definition`
+7. Press on `Create new revision`
+8. Press on `Create` (It will pull last version of the previous image of the cluster).
+9. Press on `Actions` Dropdown and select `Update Service`
+10. Press on `Skip to review`
+11. Press on `Update Service` Button.
+12. Press on the new `Task` definition and copy the new Public IP
+13. Copy it on your browser.
+14. We will see the updated App site :).
